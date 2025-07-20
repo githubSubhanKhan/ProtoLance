@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import AboutUs from "./AboutUs";
 import Hero from "./Hero";
 import Navbar from "../ui/Navbar";
-import Services from "./Services";
 import WhyUs from "./WhyUs";
 import FooterSection from "./FooterSection";
 import FacultyReviews from "./FacultyReviews";
@@ -18,26 +17,6 @@ const LandingPage = () => {
       className={`min-h-screen flex flex-col transition-colors duration-300`}
       id="home"
     >
-      <style>{`
-        @keyframes gradient {
-          0% { background-position: 0% 50%; }
-          50% { background-position: 100% 50%; }
-          100% { background-position: 0% 50%; }
-        }
-
-        .animated-gradient-blue {
-          background: linear-gradient(-45deg, #B5E2FF, #46B7FE, #21A9FE, #11557F);
-          background-size: 400% 400%;
-          animation: gradient 15s ease infinite;
-        }
-
-        .animated-gradient-yellow {
-          background: linear-gradient(0deg, #E24E01, #F07230, #D34803);
-          background-size: 400% 400%;
-          animation: gradient 15s ease infinite;
-        }
-      `}</style>
-
       {/* Header */}
       <Navbar />
 
