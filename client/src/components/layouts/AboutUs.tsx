@@ -1,52 +1,62 @@
-import { Card, CardContent } from "@/components/ui/card";
-import {
-  BrainCircuit,
-  GraduationCap,
-  Hourglass,
-  Globe,
-} from "lucide-react";
-const AboutUs = () => {
-  const features = [
+import React from 'react';
+import { Users, Flag, ClipboardList, HelpCircle } from 'lucide-react';
+
+const AboutUs: React.FC = () => {
+  const aboutData = [
     {
-      icon: BrainCircuit,
-      description:
-        "Nextbook LLM uses advanced AI to personalize book recommendations for students and facutlty, making learning more efficient and engaging.",
+      icon: <Users className="w-12 h-12 text-darkcustom" />,
+      title: "Who We Are",
+      description: "A passionate team of designers and developers crafting high-quality digital solutions. We combine creativity with technical expertise to bring ideas to life."
     },
     {
-      icon: GraduationCap,
-      description:
-        "Our LLM adapts to individual students and facutlty needs, considering their academic level, interests, and learning style to suggest the most relevant titles.",
+      icon: <Flag className="w-12 h-12 text-darkcustom" />,
+      title: "What We Do",
+      description: "We offer UI/UX design and full-stack web development. Every solution is tailored, responsive, and built for real-world performance."
     },
     {
-      icon: Hourglass,
-      description:
-        "By filtering out irrelevant information, Nextbook LLM saves students and facutlty valuable time.",
+      icon: <ClipboardList className="w-12 h-12 text-darkcustom" />,
+      title: "How We Work",
+      description: "Through a collaborative process — from planning to launch — we ensure smooth communication, on-time delivery, and results that exceed expectations."
     },
     {
-      icon: Globe,
-      description:
-        "Nextbook helps students and facutlty discover hidden gems and essential resources they might otherwise miss, broadening their knowledge and academic horizons",
-    },
+      icon: <HelpCircle className="w-12 h-12 text-darkcustom" />,
+      title: "Why Choose Us",
+      description: "We blend design thinking with development precision to create meaningful digital experiences that elevate your brand and win your audience."
+    }
   ];
+
   return (
-    <section className={`w-full px-4 md:px-8 py-10`} id="about-us">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2
-          className={`text-center font-bold text-[24px] leading-[100%] mb-12 text-redcustom`}
-        >
-          About NextBook
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 justify-items-center">
-          {features.map((feature, idx) => (
-            <Card
-              key={idx}
-              className={`bg-redbgcustom border-[2px] border-black rounded-[8px] text-black`}
+    <section className="bg-offwhitecustom py-16 px-4 sm:px-6 lg:px-8 min-h-screen">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-darkcustom mb-4 font-poppins">
+            About Us
+          </h2>
+          {/* <p className="text-xl md:text-2xl text-darkcustom font-medium font-poppins">
+            Driven by Design. Powered by Code. Built for Impact.
+          </p> */}
+        </div>
+
+        {/* About Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          {aboutData.map((item, index) => (
+            <div 
+              key={index}
+              className="bg-transparent border-2 border-darkcustom rounded-lg p-4 hover:-translate-y-2 transition-all duration-300 cursor-pointer hover:shadow-lg"
             >
-              <CardContent className="p-4 md:p-6 flex flex-col items-center justify-center space-y-4 text-center text-black">
-                <feature.icon className={`w-[70px] h-[70px]`} size={28} />
-                <p className={`text-sm md:text-base`}>{feature.description}</p>
-              </CardContent>
-            </Card>
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-2">
+                  {item.icon}
+                </div>
+                <h3 className="text-lg md:text-xl lg:text-2xl font-bold text-darkcustom mb-2 font-poppins">
+                  {item.title}
+                </h3>
+                <p className="text-base md:text-base lg:text-base text-darkcustom leading-relaxed font-arimo">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
       </div>

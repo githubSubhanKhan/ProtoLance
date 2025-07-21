@@ -32,9 +32,9 @@ const LandingPage = () => {
       </motion.div>
 
       {/* Faculty Reviews Section */}
-      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <FacultyReviews />
-      </motion.div> */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <AboutUs/>
+      </motion.div>
 
       {/* Why Us Section */}
       {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
