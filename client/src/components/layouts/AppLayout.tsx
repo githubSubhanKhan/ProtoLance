@@ -21,29 +21,29 @@ const LandingPage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <Hero />
-      </motion.div>
+      </motion.div> */}
 
       {/* About Us Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <AboutUs />
-      </motion.div>
+      </motion.div> */}
 
       {/* Faculty Reviews Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <FacultyReviews />
-      </motion.div>
+      </motion.div> */}
 
       {/* Why Us Section */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <WhyUs />
-      </motion.div>
+      </motion.div> */}
 
       {/* Footer */}
-      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <FooterSection />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 };
