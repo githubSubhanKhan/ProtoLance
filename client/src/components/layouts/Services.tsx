@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="bg-offwhitecustom py-8 px-4 sm:px-6 lg:px-8">
+    <section className="bg-offwhitecustom py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -28,31 +28,33 @@ const Services: React.FC = () => {
           </p>
           <div className="max-w-4xl mx-auto">
             <p className="text-darkcustom text-base leading-relaxed font-arimo">
-              We transform ideas into digital reality through refined design, robust development, and smooth deployment. At 
-              Protolance, we merge innovation with precision, crafting responsive and high-performing web solutions that 
+              We transform ideas into digital reality through refined design, robust development, and smooth deployment. At
+              Protolance, we merge innovation with precision, crafting responsive and high-performing web solutions that
               empower your brand to stand out in the digital world.
             </p>
           </div>
         </div>
 
-        {/* Services Cards */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        {/* Services Section */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 md:gap-y-0 mt-10">
           {services.map((service, index) => (
-            <div 
+            <div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 duration-300 border border-darkcustom border-[2px] cursor-pointer hover:-translate-y-2"
+              className={`flex flex-col items-center px-4 text-center
+                ${index !== services.length - 1
+                  ? 'border-b md:border-b-0 md:border-r border-darkcustom pb-8 md:pb-0'
+                  : ''}
+              `}
             >
-              <div className="flex flex-col items-center text-center">
-                <div className="mb-6">
-                  {service.icon}
-                </div>
-                <h3 className="text-xl font-bold text-darkcustom mb-4 font-poppins underline decoration-2 underline-offset-4">
-                  {service.title}
-                </h3>
-                <p className="text-darkcustom text-sm leading-relaxed font-arimo">
-                  {service.description}
-                </p>
+              <div className="mb-6">
+                {service.icon}
               </div>
+              <h3 className="text-2xl font-bold text-darkcustom mb-4 font-poppins underline decoration-2 underline-offset-4">
+                {service.title}
+              </h3>
+              <p className="text-darkcustom text-base leading-relaxed font-arimo">
+                {service.description}
+              </p>
             </div>
           ))}
         </div>
