@@ -1,45 +1,58 @@
-import { CalendarClock, BadgeCheck, UserRound } from "lucide-react";
+import React from 'react';
+import { Palette, Monitor } from 'lucide-react';
 
-const Services = () => {
+const Services: React.FC = () => {
   const services = [
     {
-      icon: CalendarClock,
-      description:
-        "Explore our online databases, e-journals, and digital archives accessible to all NED University students and faculty.",
+      icon: <Palette className="w-12 h-12 text-darkcustom" />,
+      title: "UI/UX Designing",
+      description: "Clean, user-friendly, and modern interfaces for web and mobile platforms."
     },
     {
-      icon: BadgeCheck,
-      description:
-        "Get assistance with your research projects, including guidance on literature reviews and citation management at NED University.",
-    },
-    {
-      icon: UserRound,
-      description:
-        "Our knowledgeable staff is here to help you find the information you need and utilize library resources effectively at NED University.",
-    },
+      icon: <Monitor className="w-12 h-12 text-darkcustom" />,
+      title: "Web Development",
+      description: "Frontend and backend development using modern tech stacks to build robust, fully responsive web apps."
+    }
   ];
 
   return (
-    <section className="w-full px-4 md:px-8 py-10 md:mt-20" id="services">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-center font-bold text-3xl md:text-4xl lg:text-[36px] mb-8 md:mb-12 text-redcustom">
-          Services
-        </h2>
+    <section className="bg-offwhitecustom py-8 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-darkcustom mb-4 font-poppins">
+            Our Services
+          </h2>
+          <p className="text-xl text-darkcustom font-medium mb-6 font-poppins">
+            Seamless Collaboration, Smart Execution, Impactful Results
+          </p>
+          <div className="max-w-4xl mx-auto">
+            <p className="text-darkcustom text-base leading-relaxed font-arimo">
+              We transform ideas into digital reality through refined design, robust development, and smooth deployment. At 
+              Protolance, we merge innovation with precision, crafting responsive and high-performing web solutions that 
+              empower your brand to stand out in the digital world.
+            </p>
+          </div>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-6">
-          {services.map((service, idx) => (
-            <div
-              key={idx}
-              className={`flex-1 px-4 md:px-6 py-8 md:py-10 flex flex-col items-center text-center relative
-                ${idx !== services.length - 1 
-                  ? 'md:border-r-2 border-b-2 md:border-b-0 border-gray-300 pb-8 md:pb-0' 
-                  : ''}
-                ${idx < services.length - 1 ? 'mb-4 md:mb-0' : ''}`}
+        {/* Services Cards */}
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {services.map((service, index) => (
+            <div 
+              key={index}
+              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 duration-300 border border-darkcustom border-[2px] cursor-pointer hover:-translate-y-2"
             >
-              <service.icon className="h-16 w-16 md:h-20 md:w-20 mb-4 md:mb-6" />
-              <p className="text-sm md:text-base lg:text-lg leading-relaxed">
-                {service.description}
-              </p>
+              <div className="flex flex-col items-center text-center">
+                <div className="mb-6">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-bold text-darkcustom mb-4 font-poppins underline decoration-2 underline-offset-4">
+                  {service.title}
+                </h3>
+                <p className="text-darkcustom text-sm leading-relaxed font-arimo">
+                  {service.description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
