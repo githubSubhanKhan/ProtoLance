@@ -4,6 +4,7 @@ import NoMatch from "./pages/NoMatch";
 import Error500 from "./pages/Error500";
 import Services from "./components/layouts/Services";
 import AboutUs from "./components/layouts/AboutUs";
+import Testimonials from "./components/layouts/Testimonials";
 
 export const router = createBrowserRouter([
   {
@@ -17,6 +18,10 @@ export const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutUs/>,
+  },
+  {
+    path: "/testimonials",
+    element: <Testimonials/>,
   },
   {
     path: "/error", // ✅ NEW
