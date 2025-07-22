@@ -1,13 +1,59 @@
-import { appConfig } from "@/config/app";
-import { ModeToggle } from "../mode-toggle";
+import { Instagram, Mail, Linkedin } from "lucide-react";
 
-export function Footer() {
-    return (
-        <footer className="flex flex-col items-center justify-between gap-4 min-h-[3rem] md:h-20 py-2 md:flex-row">
-            <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">Built by <a href={appConfig.author.url} target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">{appConfig.author.name}</a>. The source code is available on <a href={appConfig.github.url} target="_blank" rel="noreferrer" className="font-medium underline underline-offset-4">GitHub</a>.</p>
-            <div className="hidden md:block">
-                <ModeToggle />
-            </div>
-        </footer>
-    )
-}
+const Footer = () => {
+  // Social media links - easily editable
+  const socialLinks = [
+    {
+      name: "Instagram",
+      icon: Instagram,
+      url: "https://instagram.com/your-profile", // Update with your Instagram URL
+      label: "Instagram"
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:contactprotolance@gmail.com", // Update with your email
+      label: "Email"
+    },
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/your-profile", // Update with your LinkedIn URL
+      label: "LinkedIn"
+    }
+  ];
+
+  return (
+    <footer className="w-full bg-darkcustom py-2 px-4">
+      <div className="container mx-auto flex items-center justify-between">
+        
+        {/* Left side - Social Icons */}
+        <div className="flex items-center space-x-4">
+          {socialLinks.map((social) => {
+            const IconComponent = social.icon;
+            return (
+              <a 
+                key={social.name}
+                href={social.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-offwhitecustom p-2 rounded-full hover:bg-offwhitecustom hover:text-darkcustom transition-opacity duration-300"
+                aria-label={social.label}
+              >
+                <IconComponent className="w-5 h-5" />
+              </a>
+            );
+          })}
+        </div>
+
+        {/* Right side - Copyright */}
+        <div className="text-whitecustom text-sm">
+          © 2025 ProtoLance. All rights reserved.
+        </div>
+        
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

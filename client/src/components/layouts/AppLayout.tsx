@@ -7,6 +7,7 @@ import FooterSection from "./FooterSection";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
 import ContactUs from "./ContactUs";
+import Footer from "./Footer";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -47,9 +48,9 @@ const LandingPage = () => {
       </motion.div>
 
       {/* Footer */}
-      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
-        <FooterSection />
-      </motion.div> */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <Footer/>
+      </motion.div>
     </div>
   );
 };
