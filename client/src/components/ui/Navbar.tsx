@@ -7,12 +7,12 @@ const Navbar: React.FC = () => {
 
   // Navigation links data
   const navLinks = [
-    { name: 'Home', href: '/' },
-    { name: 'Services', href: '/services' },
-    { name: 'About Us', href: '/about' },
-    { name: 'Testimonials', href: '/testimonials' },
-    { name: 'Contact US', href: '/contact' }
-  ];
+  { name: 'Home', href: '#home' },
+  { name: 'Services', href: '#services' },
+  { name: 'About Us', href: '#about' },
+  { name: 'Testimonials', href: '#testimonials' },
+  { name: 'Contact Us', href: '#contact' }
+];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

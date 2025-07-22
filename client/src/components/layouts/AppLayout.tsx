@@ -15,7 +15,7 @@ const fadeInUp = {
 const LandingPage = () => {
   return (
     <div
-      className={`min-h-screen flex flex-col transition-colors duration-300`}
+      className={`min-h-screen flex flex-col transition-colors duration-300 bg-offwhitecustom`}
       id="home"
     >
       {/* Header */}

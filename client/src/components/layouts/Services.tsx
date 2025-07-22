@@ -16,7 +16,7 @@ const Services: React.FC = () => {
   ];
 
   return (
-    <section className="bg-offwhitecustom py-16 px-4 sm:px-6 lg:px-8">
+    <section className="py-16 px-4 sm:px-6 lg:px-8" id="services">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
@@ -46,10 +46,10 @@ const Services: React.FC = () => {
                   : ''}
               `}
             >
-              <div className="mb-6">
+              <div className="mb-2">
                 {service.icon}
               </div>
-              <h3 className="text-2xl font-bold text-darkcustom mb-4 font-poppins underline decoration-2 underline-offset-4">
+              <h3 className="text-2xl font-bold text-darkcustom mb-2 font-poppins">
                 {service.title}
               </h3>
               <p className="text-darkcustom text-base leading-relaxed font-arimo">
