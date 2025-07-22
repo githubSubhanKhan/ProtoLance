@@ -5,6 +5,7 @@ import Error500 from "./pages/Error500";
 import Services from "./components/layouts/Services";
 import AboutUs from "./components/layouts/AboutUs";
 import Testimonials from "./components/layouts/Testimonials";
+import ContactUs from "./components/layouts/ContactUs";
 
 export const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ export const router = createBrowserRouter([
   {
     path: "/testimonials",
     element: <Testimonials/>,
+  },
+  {
+    path: "/contact",
+    element: <ContactUs/>,
   },
   {
     path: "/error", // ✅ NEW

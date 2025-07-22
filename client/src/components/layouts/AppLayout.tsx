@@ -4,9 +4,9 @@ import Hero from "./Hero";
 import Navbar from "../ui/Navbar";
 import WhyUs from "./WhyUs";
 import FooterSection from "./FooterSection";
-import FacultyReviews from "./FacultyReviews";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
+import ContactUs from "./ContactUs";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -40,6 +40,10 @@ const LandingPage = () => {
       {/* Why Us Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <Testimonials/>
+      </motion.div>
+
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <ContactUs/>
       </motion.div>
 
       {/* Footer */}
