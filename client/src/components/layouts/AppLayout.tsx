@@ -24,9 +24,9 @@ const LandingPage = () => {
       <Navbar />
 
       {/* Hero Section */}
-      {/* <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <Hero />
-      </motion.div> */}
+      </motion.div>
 
       {/* About Us Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
