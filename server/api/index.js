@@ -17,7 +17,7 @@ app.use(cors(corsOptions));
 
 app.use(express.json());
 
-// app.use("/api/form", require("./routes/form"));
+app.use("/api/form", require("./routes/contact"));
 
 app.get("/", (req, res) => {
   res.send("Server is live!");
