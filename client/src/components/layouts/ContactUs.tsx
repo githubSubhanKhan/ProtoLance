@@ -17,10 +17,29 @@ const ContactUs = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form submitted:', formData);
+
+    try {
+      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/form/submit`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      });
+
+      const data = await res.json();
+      if (res.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: '', email: '', message: '' }); // reset form
+      } else {
+        alert(`Failed to send message: ${data?.error || 'Unknown error'}`);
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (
