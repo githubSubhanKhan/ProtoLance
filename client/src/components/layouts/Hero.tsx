@@ -15,6 +15,13 @@ const Hero = () => {
     return () => window.removeEventListener('resize', checkScreenSize);
   }, []);
 
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
       {/* Backgrounds */}
@@ -84,7 +91,8 @@ const Hero = () => {
 
           {/* Contact Button */}
           <div className="mt-4">
-            <button className="bg-transparent border-2 border-whitecustom text-whitecustom px-8 py-2 text-lg font-medium hover:bg-whitecustom hover:text-darkcustom transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-whitecustom focus:ring-offset-2 focus:ring-offset-transparent rounded-lg">
+            <button onClick={scrollToContact} 
+            className="bg-transparent border-2 border-whitecustom text-whitecustom px-8 py-2 text-lg font-medium hover:bg-whitecustom hover:text-darkcustom transition-all duration-300 rounded-lg">
               Contact US
             </button>
           </div>
