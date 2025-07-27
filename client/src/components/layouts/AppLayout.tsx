@@ -3,7 +3,6 @@ import AboutUs from "./AboutUs";
 import Hero from "./Hero";
 import Navbar from "../ui/Navbar";
 import WhyUs from "./WhyUs";
-import FooterSection from "./FooterSection";
 import Services from "./Services";
 import Testimonials from "./Testimonials";
 import ContactUs from "./ContactUs";
