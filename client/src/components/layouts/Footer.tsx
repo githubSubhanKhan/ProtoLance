@@ -24,11 +24,11 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="w-full bg-darkcustom py-2 px-4">
-      <div className="container mx-auto flex items-center justify-between">
+    <footer className="w-full bg-darkcustom py-2 px-2 sm:px-4">
+      <div className="flex items-center justify-between sm:container sm:mx-auto">
         
         {/* Left side - Social Icons */}
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-1 sm:space-x-4">
           {socialLinks.map((social) => {
             const IconComponent = social.icon;
             return (
@@ -37,17 +37,17 @@ const Footer = () => {
                 href={social.url} 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-offwhitecustom p-2 rounded-full hover:bg-offwhitecustom hover:text-darkcustom transition-opacity duration-300"
+                className="text-offwhitecustom p-1 sm:p-2 rounded-full hover:bg-offwhitecustom hover:text-darkcustom transition-opacity duration-300"
                 aria-label={social.label}
               >
-                <IconComponent className="w-5 h-5" />
+                <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             );
           })}
         </div>
 
         {/* Right side - Copyright */}
-        <div className="text-whitecustom text-sm">
+        <div className="text-whitecustom text-xs sm:text-sm whitespace-nowrap">
           © 2025 ProtoLance. All rights reserved.
         </div>
         
