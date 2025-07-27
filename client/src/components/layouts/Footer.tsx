@@ -6,7 +6,7 @@ const Footer = () => {
     {
       name: "Instagram",
       icon: Instagram,
-      url: "https://instagram.com/your-profile", // Update with your Instagram URL
+      url: "https://instagram.com/theprotolance", // Update with your Instagram URL
       label: "Instagram"
     },
     {
@@ -18,7 +18,7 @@ const Footer = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/your-profile", // Update with your LinkedIn URL
+      url: "https://linkedin.com/company/protolance", // Update with your LinkedIn URL
       label: "LinkedIn"
     }
   ];
