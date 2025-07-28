@@ -6,7 +6,7 @@ const Services: React.FC = () => {
     {
       icon: <Palette className="w-12 h-12 text-darkcustom" />,
       title: "UI/UX Designing",
-      description: "Clean, user-friendly, and modern interfaces for web and mobile platforms."
+      description: "Clean, highly user-friendly, and modern interfaces for both web and mobile platforms."
     },
     {
       icon: <Monitor className="w-12 h-12 text-darkcustom" />,
