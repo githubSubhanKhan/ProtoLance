@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full py-20 flex items-center justify-center overflow-hidden">
       {/* Backgrounds */}
       <div 
         className="absolute inset-0 hidden lg:block bg-cover bg-center bg-no-repeat"
@@ -44,7 +44,7 @@ const Hero = () => {
                 style={{
                   fontFamily: 'Poppins, sans-serif',
                   fontWeight: 900,
-                  fontSize: isMobile ? '120px' : 'clamp(200px, 25vw, 400px)',
+                  fontSize: isMobile ? '160px' : 'clamp(200px, 25vw, 400px)',
                   lineHeight: '100%',
                   letterSpacing: '-2%'
                 }}
@@ -93,7 +93,7 @@ const Hero = () => {
           <div className="mt-4">
             <button onClick={scrollToContact} 
             className="bg-transparent border-2 border-whitecustom text-whitecustom px-8 py-2 text-lg font-medium hover:bg-whitecustom hover:text-darkcustom transition-all duration-300 rounded-lg">
-              Contact US
+              Contact Us
             </button>
           </div>
         </div>
