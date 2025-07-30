@@ -26,7 +26,7 @@ const AboutUs: React.FC = () => {
   ];
 
   return (
-    <section className="py-16 px-4 sm:px-6 lg:px-8 min-h-screen" id="about">
+    <section className="px-4 sm:px-6 lg:px-8 py-16" id="about">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-8">

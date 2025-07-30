@@ -41,7 +41,7 @@ const Testimonials = () => {
   ];
 
   return (
-    <section className="w-full py-8 overflow-hidden" id="testimonials">
+    <section className="w-full overflow-hidden py-16" id="testimonials">
       <div className="container mx-auto px-4 mb-6">
         <h2 className="text-2xl font-bold text-center mb-2 text-darkcustom">What Our Users Say</h2>
         <p className="text-gray-600 text-center">Discover how our platform is transforming research and learning</p>

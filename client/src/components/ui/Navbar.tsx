@@ -24,11 +24,13 @@ const Navbar: React.FC = () => {
         <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <img 
-              src={logo} 
-              alt="ProtoLance Logo" 
-              className="h-6 w-auto sm:h-6"
-            />
+            <a 
+              href="#home" 
+              className="text-whitecustom font-bold text-2xl cursor-pointer"
+              style={{ fontFamily: 'Poppins' }}
+            >
+              ProtoLance.
+            </a>
           </div>
 
           {/* Desktop Navigation */}

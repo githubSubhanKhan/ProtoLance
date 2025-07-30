@@ -70,7 +70,7 @@ const ContactUs = () => {
     <>
       <Alert show={alert.show} type={alert.type} message={alert.message} />
       
-      <section className="w-full py-12 px-4" id="contact">
+      <section className="w-full py-16 px-4" id="contact">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             

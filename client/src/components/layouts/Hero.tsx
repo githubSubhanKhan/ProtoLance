@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full py-20 flex items-center justify-center overflow-hidden">
+    <section className="relative w-full py-16 flex items-center justify-center overflow-hidden">
       {/* Backgrounds */}
       <div 
         className="absolute inset-0 hidden lg:block bg-cover bg-center bg-no-repeat"
@@ -42,7 +42,7 @@ const Hero = () => {
               <h1
                 className="text-whitecustom font-black leading-none"
                 style={{
-                  fontFamily: 'Poppins, sans-serif',
+                  fontFamily: 'Poppins',
                   fontWeight: 900,
                   fontSize: isMobile ? '160px' : 'clamp(200px, 25vw, 400px)',
                   lineHeight: '100%',
