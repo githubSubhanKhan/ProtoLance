@@ -7,7 +7,7 @@ const Hero = () => {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkScreenSize();
@@ -23,7 +23,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full py-16 flex items-center justify-center overflow-hidden">
+    <section className="relative w-full py-16 flex items-center justify-center overflow-hidden lg:min-h-0">
       {/* Backgrounds */}
       <div 
         className="absolute inset-0 hidden lg:block bg-cover bg-center bg-no-repeat"
@@ -34,17 +34,18 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 lg:px-8">
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-          <div className="flex flex-row items-start justify-center lg:justify-start">
-            
+        <div className="flex flex-col items-start lg:items-start items-center">
+
+          {/* D + Typing Text Block */}
+          <div className="flex flex-row items-start justify-start w-fit">
             {/* Big "D" */}
-            <div className="mr-2 lg:mr-4">
+            <div className="mr-2 lg:mr-4 leading-none">
               <h1
-                className="text-whitecustom font-black leading-none"
+                className="text-whitecustom font-black"
                 style={{
                   fontFamily: 'Poppins',
                   fontWeight: 900,
-                  fontSize: isMobile ? '160px' : 'clamp(200px, 25vw, 400px)',
+                  fontSize: isMobile ? 'clamp(120px, 25vw, 160px)' : 'clamp(150px, 22vw, 340px)',
                   lineHeight: '100%',
                   letterSpacing: '-2%'
                 }}
@@ -53,8 +54,8 @@ const Hero = () => {
               </h1>
             </div>
 
-            {/* Typing Animation Words */}
-            <div className="flex flex-col justify-center gap-1">
+            {/* Typing Text */}
+            <div className="flex flex-col justify-start gap-[0.25em] leading-none">
               {['esign.', 'evelop.', 'eploy.'].map((text, index) => (
                 <h2
                   key={index}
@@ -62,7 +63,7 @@ const Hero = () => {
                   style={{
                     fontFamily: 'Poppins, sans-serif',
                     fontWeight: 900,
-                    fontSize: isMobile ? '40px' : 'clamp(48px, 8vw, 96px)',
+                    fontSize: isMobile ? 'clamp(32px, 8vw, 48px)' : 'clamp(48px, 8vw, 96px)',
                     lineHeight: '100%',
                     letterSpacing: '-2%'
                   }}
@@ -79,22 +80,42 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Subtitles */}
-          <div className="mt-2 max-w-md lg:max-w-lg text-center lg:text-left">
-            <p className="text-offwhitecustom text-base sm:text-lg lg:text-xl leading-relaxed mb-2">
-              From First Sketch to Final Launch,
-            </p>
-            <p className="text-offwhitecustom text-base sm:text-lg lg:text-xl leading-relaxed mb-2">
-              We Handle It All.
-            </p>
-          </div>
-
-          {/* Contact Button */}
-          <div className="mt-4">
-            <button onClick={scrollToContact} 
-            className="bg-transparent border-2 border-whitecustom text-whitecustom px-8 py-2 text-lg font-medium hover:bg-whitecustom hover:text-darkcustom transition-all duration-300 rounded-lg">
-              Contact Us
-            </button>
+          {/* Bottom Content - Different positioning for mobile vs desktop */}
+          <div className={`mt-4 flex flex-col items-start w-fit ${
+            isMobile 
+              ? 'self-center text-center' 
+              : 'ml-[calc(200px+1rem)]'
+          }`}>
+            <div className="flex flex-col items-center text-center">
+              <div className="max-w-md">
+                <p className={`text-offwhitecustom leading-relaxed mb-2 ${
+                  isMobile 
+                    ? 'text-sm sm:text-base' 
+                    : 'text-base sm:text-lg lg:text-xl'
+                }`}>
+                  From First Sketch to Final Launch,
+                </p>
+                <p className={`text-offwhitecustom leading-relaxed mb-2 ${
+                  isMobile 
+                    ? 'text-sm sm:text-base' 
+                    : 'text-base sm:text-lg lg:text-xl'
+                }`}>
+                  We Handle It All.
+                </p>
+              </div>
+              <div className="mt-4">
+                <button
+                  onClick={scrollToContact}
+                  className={`bg-transparent border-2 border-whitecustom text-whitecustom font-medium hover:bg-whitecustom hover:text-darkcustom transition-all duration-300 rounded-lg ${
+                    isMobile 
+                      ? 'px-6 py-2 text-base' 
+                      : 'px-8 py-2 text-lg'
+                  }`}
+                >
+                  Contact Us
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
