@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const FormData = require("../models/ContactForm");
+const sendEmail = require("./emailSender");
 
 router.post("/submit", async (req, res) => {
   try {
@@ -9,7 +10,9 @@ router.post("/submit", async (req, res) => {
     const newForm = new FormData({ name, email, message });
     await newForm.save();
 
-    res.status(200).json({ success: true, message: "Data saved to MongoDB" });
+    await sendEmail(name, email, message);
+
+    res.status(200).json({ success: true, message: "Data saved and email sent!" });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
