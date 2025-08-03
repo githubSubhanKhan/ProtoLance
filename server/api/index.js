@@ -9,8 +9,8 @@ connectDB();
 const app = express();
 
 const corsOptions = {
-  origin: ['http://localhost:5173', 'https://protolance.vercel.app/'],
-  methods: ['GET', 'POST'],
+  origin: ['http://localhost:5173', 'https://protolance.vercel.app'],
+  methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
 };
 app.use(cors(corsOptions));
