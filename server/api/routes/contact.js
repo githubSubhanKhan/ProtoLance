@@ -2,6 +2,7 @@ const express = require("express");
 const router = express.Router();
 const FormData = require("../models/ContactForm");
 const sendEmail = require("./emailSender");
+const sendWhatsAppNotification = require("../utils/whatsappNotification");
 
 router.post("/submit", async (req, res) => {
   try {
@@ -11,6 +12,8 @@ router.post("/submit", async (req, res) => {
     await newForm.save();
 
     await sendEmail(name, email, message);
+
+    await sendWhatsAppNotification(name, email, message);
 
     res.status(200).json({ success: true, message: "Data saved and email sent!" });
   } catch (err) {
