@@ -4,6 +4,7 @@ import { useState } from "react";
 import Alert from "../ui/alert";
 
 const ContactUs = () => {
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -36,13 +37,15 @@ const ContactUs = () => {
   };
 
   const isFormValid = () => {
-    return formData.name.trim() !== '' && 
-           formData.email.trim() !== '' && 
-           formData.message.trim() !== '';
+    return formData.name.trim() !== '' &&
+      formData.email.trim() !== '' &&
+      formData.message.trim() !== '';
   };
 
   const handleSubmit = async () => {
     if (!isFormValid()) return;
+
+    setLoading(true);
 
     try {
       const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/form/submit`, {
@@ -63,17 +66,19 @@ const ContactUs = () => {
     } catch (error) {
       console.error("Form submission error:", error);
       showAlert('error', 'Something went wrong. Please try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
   return (
     <>
       <Alert show={alert.show} type={alert.type} message={alert.message} />
-      
+
       <section className="w-full py-8 px-4" id="contact">
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            
+
             {/* Left Card - Let's Work Together (Hidden on mobile) */}
             <Card className="bg-white rounded-2xl shadow-lg border border-gray-200 hidden lg:block">
               <CardContent className="p-8 h-full flex flex-col justify-center text-center">
@@ -83,7 +88,7 @@ const ContactUs = () => {
                     Let's Work Together
                   </h2>
                 </div>
-                
+
                 <div className="mb-8">
                   <h3 className="text-lg font-semibold text-darkcustom mb-2">
                     Have an idea in mind or just want to say hello?
@@ -92,7 +97,7 @@ const ContactUs = () => {
                     We'd love to hear from you. Fill out the form and we'll get back to you soon.
                   </p>
                 </div>
-                
+
                 <div className="flex items-center text-darkcustom mx-auto">
                   <Mail className="w-5 h-5 mr-3" />
                   <span className="text-sm font-medium">contactprotolance@gmail.com</span>
@@ -106,7 +111,7 @@ const ContactUs = () => {
                 <h2 className="text-2xl font-bold text-center text-darkcustom mb-6">
                   Contact Now
                 </h2>
-                
+
                 <div className="space-y-6">
                   <div>
                     <input
@@ -119,7 +124,7 @@ const ContactUs = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <input
                       type="email"
@@ -131,7 +136,7 @@ const ContactUs = () => {
                       required
                     />
                   </div>
-                  
+
                   <div>
                     <textarea
                       name="message"
@@ -143,24 +148,24 @@ const ContactUs = () => {
                       required
                     />
                   </div>
-                  
+
                   <div className="text-center">
-                    <button
+                    <button id="sendBtn"
                       onClick={handleSubmit}
-                      disabled={!isFormValid()}
-                      className={`px-8 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-darkcustom focus:ring-offset-2 ${
-                        isFormValid() 
-                          ? 'bg-darkcustom text-white hover:opacity-90 cursor-pointer' 
-                          : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                      }`}
+                      disabled={!isFormValid() || loading}
+                      className={`px-8 py-3 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-darkcustom focus:ring-offset-2 
+    ${(!isFormValid() || loading)
+                          ? 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                          : 'bg-darkcustom text-white hover:opacity-90 cursor-pointer'
+                        }`}
                     >
-                      Send Message
+                      {loading ? "Sending..." : "Send Message"}
                     </button>
                   </div>
                 </div>
               </CardContent>
             </Card>
-            
+
           </div>
         </div>
       </section>
