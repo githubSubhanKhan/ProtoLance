@@ -14,7 +14,7 @@ router.post("/submit", async (req, res) => {
 
     await sendEmail(name, email, message);
 
-    // await sendWhatsAppNotification(name, email, message);
+    await sendWhatsAppNotification(name, email, message);
 
     await notifyTeamMembers(name, email, message);
 
