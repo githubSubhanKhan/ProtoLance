@@ -11,9 +11,12 @@ require("dotenv").config();
 const sendEmail = async (name, email, message) => {
   try {
     const prompt = `You are a polite assistant representing ProtoLance, a professional business website development company. A user named "${name}" submitted the following message:\n\n"${message}"\n\nWrite ONLY the body of a warm, friendly, and professional email in response. 
-Start by thanking the user for reaching out. Acknowledge their message appropriately. Then, briefly introduce ProtoLance with this information:
-"Our team at ProtoLance specializes in helping businesses refresh their online presence with modern, fast, and clean full-stack websites built with intuitive UI/UX design. The goal isn’t just to make it look better — but to help turn more visitors into inquiries and sales."
-Do NOT include a subject line. Start the email body with "Dear ${name}," and end the message with: Best regards,\nProtoLance`;
+Do NOT include a subject line. The structure must be:
+1. Start with: "Hi ${name},"
+2. Thank them for reaching out to ProtoLance with their inquiry. 
+3. Acknowledge their interest briefly. 
+4. Politely ask for their availability in their own country's or state’s standard time to schedule a Google Meet session for further discussion.
+5. End with: "Best regards,\nProtoLance"`;
 
 
     const emailBody = await generateResponse(prompt);
