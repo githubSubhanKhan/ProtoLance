@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Navbar from "../ui/Navbar";
 import WhyUs from "./WhyUs";
 import Services from "./Services";
+import OurWork from "./OurWork";
 import Testimonials from "./Testimonials";
 import ContactUs from "./ContactUs";
 import Footer from "./Footer";
@@ -35,6 +36,11 @@ const LandingPage = () => {
       {/* Faculty Reviews Section */}
       <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
         <AboutUs/>
+      </motion.div>
+
+       {/* OurWork Section */}
+      <motion.div variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }}>
+        <OurWork />
       </motion.div>
 
       {/* Why Us Section */}
